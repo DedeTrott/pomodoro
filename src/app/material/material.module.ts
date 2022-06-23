@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -11,7 +13,8 @@ const MaterialComponents = [MatSliderModule,
                             MatButtonModule,
                             MatSidenavModule,
                             MatIconModule,
-                            MatListModule] 
+                            MatListModule,
+                            MatButtonToggleModule] 
 
 @NgModule({
   imports: [MatSliderModule,
@@ -19,12 +22,14 @@ const MaterialComponents = [MatSliderModule,
             MatButtonModule,
             MatSidenavModule,
             MatIconModule,
-            MatListModule],
+            MatListModule,
+            MatButtonToggleModule],
   exports: [MatSliderModule,
             MatToolbarModule,
             MatButtonModule,
             MatSidenavModule,
             MatIconModule,
-            MatListModule]
+            MatListModule,
+            MatButtonToggleModule]
 })
 export class MaterialModule { }
