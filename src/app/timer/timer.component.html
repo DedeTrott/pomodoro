@@ -1,0 +1,11 @@
+<div class="timer">
+    {{ minutesLeft }}:{{ secondsLeft }}
+</div>
+
+<br><br><br>
+
+<mat-button-toggle-group>
+    <mat-button-toggle (click)='startTimer()' [value]="true"> START </mat-button-toggle>
+    <mat-button-toggle (click)='pauseTimer()' [value]="false"> STOP </mat-button-toggle>
+    <mat-button-toggle (click)='resetTimer()'> RESET </mat-button-toggle>
+</mat-button-toggle-group>
