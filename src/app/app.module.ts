@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimerComponent } from './timer/timer.component';
 import { TimerControlsComponent } from './timer-controls/timer-controls.component';
+import { ShortBreakComponent } from './short-break/short-break.component';
+import { LongBreakComponent } from './long-break/long-break.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TimerControlsComponent } from './timer-controls/timer-controls.componen
     HeaderComponent,
     FooterComponent,
     TimerComponent,
-    TimerControlsComponent
+    TimerControlsComponent,
+    ShortBreakComponent,
+    LongBreakComponent
   ],
   imports: [
     BrowserModule,

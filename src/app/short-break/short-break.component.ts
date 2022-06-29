@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-timer',
-  templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.sass'],
+  selector: 'app-short-break',
+  templateUrl: './short-break.component.html',
+  styleUrls: ['./short-break.component.sass']
 })
+export class ShortBreakComponent {
 
-export class TimerComponent {
-  private time = 25;
+  private time = 5;
   private get timerStartValue() {
     return this.time * 60; // seconds
   }
@@ -59,4 +59,5 @@ export class TimerComponent {
   formatLeftTime() {
     return new Date(this.timerRemaining * 1000).toISOString().substring(14, 19); // mm:ss format
   }
+
 }

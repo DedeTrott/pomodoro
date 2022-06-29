@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-timer',
-  templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.sass'],
+  selector: 'app-long-break',
+  templateUrl: './long-break.component.html',
+  styleUrls: ['./long-break.component.sass']
 })
+export class LongBreakComponent{
 
-export class TimerComponent {
-  private time = 25;
+  private time = 10;
   private get timerStartValue() {
     return this.time * 60; // seconds
   }
