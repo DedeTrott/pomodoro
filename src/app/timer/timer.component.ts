@@ -1,51 +1,59 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.sass']
+  styleUrls: ['./timer.component.sass'],
 })
 export class TimerComponent{
-  minutesLeft: number = 25;
-  secondsLeft: any = "00";
-  placeholder: string = "0";
-  // timeLeft: number = Math.floor(1500 * 1.66667);
-  minutesInterval: any;
-  secondsInterval: any;
+  private time = 25;
+  private get timerStartValue(){
+  return this.time * 60; // seconds
+}
+  private timerRemaining = this.timerStartValue;
+  private interval: any;
 
-  startTimer(): void{
-
-    this.minutesLeft = 24
-    this.secondsLeft = 59
-
-    this.minutesInterval = setInterval(() => {
-      this.minutesLeft = this.minutesLeft - 1; 
-    }, 60000);
-    this.secondsInterval = setInterval(() => {
-      this.secondsLeft--;
-      if(this.secondsLeft < 10){
-        this.secondsLeft = this.placeholder + this.secondsLeft;
-      }
-      if(this.secondsLeft <= 0 ) {
-        if(this.minutesLeft <= 0) {
-          clearInterval(this.minutesInterval);
-          clearInterval(this.secondsInterval);
-        } else {
-          this.secondsLeft = 59;
+  startTimer(){
+    this.playSound();
+    this.interval = setInterval(() => {
+      if(this.timerRemaining > 0){ 
+        this.timerRemaining--;
+        if(this.timerRemaining == 0){
+          this.playGong();
         }
       } 
-    }, 1000);
-
-}
-
-  pauseTimer(): void {
-    clearInterval(this.minutesInterval);
-    clearInterval(this.secondsInterval);
+    }, 1000)
 
   }
 
-  resetTimer(): void{
-    this.minutesLeft = 25;
-    this.secondsLeft = "00";
+  pauseTimer(){
+    this.pauseSound();
+    clearInterval(this.interval);
   }
+
+  resetTimer(){
+    this.pauseTimer();
+    this.timerRemaining = this.timerStartValue;
+  }
+
+  playGong() {
+    const audio = new Audio('./assets/sounds/gong.mp3');
+    audio.play();
+  }
+
+  playSound(){
+    const audio = new Audio('./assets/sounds/switch.mp3');
+    audio.play();
+  }
+
+  pauseSound(){
+    const audio = new Audio('./assets/sounds/switch-3.mp3');
+    audio.play();
+  }
+
+ formatLeftTime(){
+  return new Date(this.timerRemaining * 1000).toISOString().substring(14, 19); // mm:ss format
+ }
 }
