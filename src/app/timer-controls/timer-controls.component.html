@@ -1,1 +1,26 @@
-<p>timer-controls works!</p>
+<br>
+<div class="controls">
+  <div class="main_btn">
+    <button id="btn" class="btn_class" mat-raised-button (click)="clickEvent('startTimer')">	
+      <mat-icon class="play_icon">play_arrow</mat-icon> Start
+    </button>      
+      <button id="btn" class="btn_class" mat-raised-button (click)="clickEvent('pauseTimer')">	
+        <mat-icon class="play_icon">pause</mat-icon> Pause
+      </button>
+
+
+  </div>
+
+
+<button class="fab_btn" mat-fab color="warn" aria-label="resetTimer" (click)="clickEvent('resetTimer')">
+    <mat-icon>settings_backup_restore</mat-icon>
+  </button>
+  <br>
+</div>
+
+
+  <!-- <mat-button-toggle-group>
+    <mat-button-toggle (click)='startTimer()' [disabled]="startButtonDisabled"> START </mat-button-toggle>
+    <mat-button-toggle (click)='pauseTimer()' [disabled]="stopButtonDisabled"> STOP </mat-button-toggle>
+   <mat-button-toggle (click)='resetTimer()'> RESET </mat-button-toggle> 
+</mat-button-toggle-group> -->

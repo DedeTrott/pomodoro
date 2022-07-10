@@ -3,9 +3,5 @@
 </div>
 
 <br><br><br>
-
-<mat-button-toggle-group>
-    <mat-button-toggle (click)='startTimer()' [disabled]="startButtonDisabled"> START </mat-button-toggle>
-    <mat-button-toggle (click)='pauseTimer()' [disabled]="stopButtonDisabled"> STOP </mat-button-toggle>
-   <mat-button-toggle (click)='resetTimer()'> RESET </mat-button-toggle> 
-</mat-button-toggle-group>
+<mat-divider></mat-divider>
+<app-timer-controls></app-timer-controls>

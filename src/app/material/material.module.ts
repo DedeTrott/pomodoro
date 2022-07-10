@@ -8,7 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatDivider } from '@angular/material/divider';
 
 const MaterialComponents = [MatTabsModule, MatGridListModule, MatCardModule,
                             MatSliderModule,
@@ -17,22 +18,28 @@ const MaterialComponents = [MatTabsModule, MatGridListModule, MatCardModule,
                             MatSidenavModule,
                             MatIconModule,
                             MatListModule,
-                            MatButtonToggleModule] 
+                            MatButtonToggleModule,
+                            MatDivider] 
 
 @NgModule({
-  imports: [MatTabsModule, MatGridListModule, MatCardModule, MatSliderModule,
+  imports: [MatTabsModule, 
+            MatGridListModule,
+            MatCardModule,
+            MatSliderModule,
             MatToolbarModule,
             MatButtonModule,
             MatSidenavModule,
             MatIconModule,
             MatListModule,
-            MatButtonToggleModule],
+            MatButtonToggleModule, 
+            ],
   exports: [MatTabsModule, MatGridListModule, MatCardModule, MatSliderModule,
             MatToolbarModule,
             MatButtonModule,
             MatSidenavModule,
             MatIconModule,
             MatListModule,
-            MatButtonToggleModule]
+            MatButtonToggleModule,
+            MatDivider]
 })
 export class MaterialModule { }
